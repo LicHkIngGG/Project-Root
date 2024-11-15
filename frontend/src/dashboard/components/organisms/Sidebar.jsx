@@ -1,20 +1,18 @@
 import React from 'react';
-import SidebarLinkGroup from '../molecules/SidebarLinkGroup';
-import '../styles/components/Sidebar.module.css';
+import { Link } from 'react-router-dom';
+import './Sidebar.css';
 
 const Sidebar = () => (
-  <aside className={styles.sidebar}>
-    <div className={styles['sidebar-header']}>
-      <a href="#" className={styles['sidebar-logo']}>
-        <img src="/assets/react.svg" alt="Logo" height="40" width="40" className="rounded-lg" />
-        <span>ADMIN</span>
-      </a>
+    <div className="sidebar">
+      <h2>ADMIN</h2>
+      <ul>
+        <li><Link to="/">Dashboard</Link></li>
+        <li><Link to="/registro">Registro</Link></li>
+        <li><Link to="/calendar">Calendar</Link></li>
+        <li><Link to="/reports">Reports</Link></li>
+        <li><Link to="/administracion">Administración</Link></li>
+      </ul>
     </div>
-    <div className={styles['sidebar-content']}>
-      <SidebarLinkGroup />
-    </div>
-  </aside>
-);
-
-export default Sidebar;
-
+  );
+  
+  export default Sidebar;

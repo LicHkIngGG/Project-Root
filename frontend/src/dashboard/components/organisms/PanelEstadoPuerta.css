@@ -1,0 +1,48 @@
+/* src/dashboard/components/organisms/PanelEstadoPuerta.css */
+
+.panel-estado-puerta {
+  text-align: center;
+  padding: 30px;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 15px;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 800px; /* Limita el ancho máximo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-top: 20px;
+  border: 2px solid purple; /* Borde temporal para diagnosticar */
+}
+
+.panel-estado-puerta h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.estado-puerta {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5a770;
+  border-radius: 30px;
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.button {
+  background-color: #f5a770;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e58950;
+}

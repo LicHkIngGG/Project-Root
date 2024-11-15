@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../styles/components/Button.module.css';
+import '../atoms/Button.css';
 
-const Button = ({ children, onClick }) => (
-  <button className={styles.button} onClick={onClick}>
-    {children}
+const Button = ({ onClick, label }) => (
+  <button className="button" onClick={onClick}>
+    {label}
   </button>
 );
 

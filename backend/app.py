@@ -7,7 +7,7 @@ from routes.asistencia import asistencia_bp
 from routes.notificaciones import notificaciones_bp
 
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app, origins="*")
 socketio = SocketIO(app, cors_allowed_origins="*")
 
@@ -22,6 +22,6 @@ app.register_blueprint(logs_chapa_bp)
 app.register_blueprint(asistencia_bp)
 app.register_blueprint(notificaciones_bp)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.debug = True
     socketio.run(app, host='0.0.0.0', port=5000)
