@@ -1,0 +1,31 @@
+.card {
+    padding: 1.5rem; /* p-6 */
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+  
+  .status {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 1.5rem; /* spacing before button */
+  }
+  
+  .status > span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8D7C1;
+    font-size: 0.875rem;
+  }
+  

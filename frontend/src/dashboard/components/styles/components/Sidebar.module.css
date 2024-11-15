@@ -1,0 +1,29 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+    background-color: rgba(229, 231, 235, 0.4); /* bg-gray-100/40 */
+    border-right: 1px solid #e5e7eb; /* border color */
+  }
+  
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid #e5e7eb; /* border color */
+    padding: 0 1.5rem; /* px-6 */
+  }
+  
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .sidebar-content {
+    flex: 1;
+    padding: 0 1rem; /* px-4 */
+  }
+  
