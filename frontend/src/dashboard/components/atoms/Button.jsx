@@ -1,5 +1,5 @@
 import React from 'react';
-import '../atoms/Button.css';
+import './Button.css';
 
 const Button = ({ onClick, label }) => (
   <button className="button" onClick={onClick}>
