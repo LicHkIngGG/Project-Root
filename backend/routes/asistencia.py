@@ -2,7 +2,7 @@
 from flask import Blueprint, request, jsonify
 from extensions import mysql
 
-asistencia_bp = Blueprint('asistencia', _name_)
+asistencia_bp = Blueprint('asistencia', __name__)
 
 @asistencia_bp.route('/api/asistencia', methods=['POST'])
 def registrar_asistencia():

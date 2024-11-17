@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import EstadoPuerta from '../molecules/EstadoPuerta';
-import Button from '../atoms/Button';
+import './PanelEstadoPuerta.css';
 
 const PanelEstadoPuerta = () => {
-  const [estadoChapa, setEstadoChapa] = useState('CERRADO');
+  const [estadoChapa, setEstadoChapa] = useState('CERRADO'); // Estado de la chapa
+  const [botonEstado, setBotonEstado] = useState('CHAPA APAGADA'); // Texto dinámico del botón
+  const [botonClase, setBotonClase] = useState('boton-apagado'); // Clase CSS dinámica del botón
 
   const handleButtonClick = async () => {
     try {
-      const response = await fetch('http://192.168.40.102:5000/api/activar_chapa', {
+      // Cambiar estado inicial al presionar
+      setBotonEstado('ENCENDIENDO CHAPA...');
+      setBotonClase('boton-encendido');
+      setEstadoChapa('ABIERTO');
+
+      // Llamada al backend
+      const response = await fetch('http://127.0.0.1:5000/api/activar_chapa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -17,26 +24,36 @@ const PanelEstadoPuerta = () => {
 
       const data = await response.json();
       if (data.status === 'success') {
-        setEstadoChapa('ABIERTO');
+        // Si la operación fue exitosa
         setTimeout(() => {
           setEstadoChapa('CERRADO');
-        }, 2000); // Cambia el estado a 'CERRADO' después de 2 segundos
+          setBotonEstado('CHAPA APAGADA');
+          setBotonClase('boton-apagado');
+        }, 2000);
       } else {
-        alert('Error al abrir la chapa');
+        // En caso de error del backend
+        alert('Error al abrir la chapa: ' + data.message);
+        setEstadoChapa('CERRADO');
+        setBotonEstado('CHAPA APAGADA');
+        setBotonClase('boton-apagado');
       }
     } catch (error) {
-      console.error('Error:', error);
+      // En caso de fallo en la comunicación con el backend
+      console.error('Error al conectar con el servidor:', error);
       alert('Error al conectar con el servidor');
+      setEstadoChapa('CERRADO');
+      setBotonEstado('CHAPA APAGADA');
+      setBotonClase('boton-apagado');
     }
   };
 
   return (
     <div className="panel-estado-puerta">
       <h2>ESTADOS DE LA PUERTA</h2>
-      <div className="estado-puerta">
-        <EstadoPuerta nombre="LABORATORIO 114" estado={estadoChapa} />
-      </div>
-      <Button onClick={handleButtonClick} label="ABRIR CHAPA ELECTRICA" />
+      <p>Estado de la chapa: <strong>{estadoChapa}</strong></p>
+      <button className={botonClase} onClick={handleButtonClick}>
+        {botonEstado}
+      </button>
     </div>
   );
 };

@@ -2,7 +2,7 @@
 from flask import Blueprint, request, jsonify
 from extensions import mysql
 
-notificaciones_bp = Blueprint('notificaciones', _name_)
+notificaciones_bp = Blueprint('notificaciones', __name__)
 
 @notificaciones_bp.route('/api/notificaciones', methods=['POST'])
 def crear_notificacion():
