@@ -4,6 +4,7 @@ import DashboardLayout from './dashboard/components/templates/DashboardLayout';
 import EstadosPuertaPage from './dashboard/components/pages/EstadosPuertaPage';
 import PanelRegistroAsistencia from './dashboard/components/organisms/PanelRegistroAsistencia';
 import Calendario from './dashboard/components/organisms/Calendario';
+import Reportes from './dashboard/components/organisms/Reportes';
 import Login from './login/Login';
 
 const App = () => {
@@ -42,8 +43,8 @@ const App = () => {
                 <Routes>
                   <Route path="/registro" element={<PanelRegistroAsistencia />} />
                   <Route path="/calendar" element={<Calendario />} />
-                  <Route path="/reports" element={<div>Reports</div>} />
                   <Route path="/administracion" element={<EstadosPuertaPage />} />
+                  <Route path="/reports" element={<Reportes/>} />
                 </Routes>
               </DashboardLayout>
             }
