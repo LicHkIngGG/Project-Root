@@ -1,115 +1,62 @@
-.calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 220px; /* Asegura que el calendario no se superponga con el sidebar */
-    padding: 20px;
-  }
-  
-  .calendar-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .buttons {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-  }
-  
-  .buttons button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .buttons button:hover {
-    background-color: #45a049;
-  }
-  
-  .attendance-details {
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.calendar-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.attendance-details {
+  margin-top: 20px;
+  overflow-x: auto; /* Scroll horizontal para tablas */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+  .calendar-content {
     width: 100%;
-    max-width: 800px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .attendance-details h3 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .attendance-details table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .attendance-details th, .attendance-details td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .attendance-details th {
-    background-color: #f1f1f1;
-    color: #333;
-  }
-  
-  .attendance-details tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .attendance-details tr:hover {
-    background-color: #f1f1f1;
-  }
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-  }
-  
-  .modal input, .modal select {
-    margin: 10px 0;
-    padding: 8px;
-    width: 100%;
-  }
-  
-  .modal button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
     padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
   }
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+
+  .buttons {
+    flex-direction: column;
   }
-  
-  .close-button {
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
+
+  table {
+    font-size: 12px;
   }
-  
-  .close-button:hover {
-    color: red;
-  }
-  
+}
+

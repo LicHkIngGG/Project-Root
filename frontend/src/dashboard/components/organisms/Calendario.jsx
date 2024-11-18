@@ -119,83 +119,31 @@ const Calendario = () => {
   };
 
   return (
-    <div className="calendar-container">
+    <div className="calendar-wrapper">
       <h2>Calendario de Asistencia</h2>
-      <Calendar onClickDay={handleDateClick} />
-      <div className="buttons">
-        <button onClick={handleAddRecord}>Añadir Registro</button>
-        <select onChange={(e) => handleFilter(e.target.value, "paralelo")}>
-          <option value="">Filtrar por Paralelo</option>
-          {paralelos.map((p) => (
-            <option key={p} value={p}>
-              {p}
-            </option>
-          ))}
-        </select>
-        <select onChange={(e) => handleFilter(e.target.value, "carrera")}>
-          <option value="">Filtrar por Carrera</option>
-          {carreras.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
-        <button onClick={handleExportCSV}>Exportar CSV</button>
-      </div>
-
-      {modalVisible && (
-        <div className="modal">
-          <div className="modal-header">
-            <h3>Añadir Registro</h3>
-            <button className="close-button" onClick={() => setModalVisible(false)}>
-              X
-            </button>
-          </div>
-          <input
-            type="text"
-            placeholder="Nombre"
-            value={newEntry.nombre}
-            onChange={(e) => setNewEntry({ ...newEntry, nombre: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="Saga"
-            value={newEntry.saga}
-            onChange={(e) => setNewEntry({ ...newEntry, saga: e.target.value })}
-          />
-          <select
-            value={newEntry.paralelo}
-            onChange={(e) => setNewEntry({ ...newEntry, paralelo: e.target.value })}
-          >
-            <option value="">Seleccionar Paralelo</option>
+      <div className="calendar-content">
+        <Calendar onClickDay={handleDateClick} />
+        <div className="buttons">
+          <button onClick={handleAddRecord}>Añadir Registro</button>
+          <select onChange={(e) => handleFilter(e.target.value, "paralelo")}>
+            <option value="">Filtrar por Paralelo</option>
             {paralelos.map((p) => (
               <option key={p} value={p}>
                 {p}
               </option>
             ))}
           </select>
-          <select
-            value={newEntry.estado}
-            onChange={(e) => setNewEntry({ ...newEntry, estado: e.target.value })}
-          >
-            <option value="">Seleccionar Estado</option>
-            <option value="Presente">Presente</option>
-            <option value="Ausente">Ausente</option>
-          </select>
-          <select
-            value={newEntry.carrera}
-            onChange={(e) => setNewEntry({ ...newEntry, carrera: e.target.value })}
-          >
-            <option value="">Seleccionar Carrera</option>
+          <select onChange={(e) => handleFilter(e.target.value, "carrera")}>
+            <option value="">Filtrar por Carrera</option>
             {carreras.map((c) => (
               <option key={c} value={c}>
                 {c}
               </option>
             ))}
           </select>
-          <button onClick={handleSaveRecord}>Guardar</button>
+          <button onClick={handleExportCSV}>Exportar CSV</button>
         </div>
-      )}
+      </div>
 
       {selectedDate && (
         <div className="attendance-details">

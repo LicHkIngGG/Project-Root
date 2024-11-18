@@ -5,6 +5,7 @@ import EstadosPuertaPage from './dashboard/components/pages/EstadosPuertaPage';
 import PanelRegistroAsistencia from './dashboard/components/organisms/PanelRegistroAsistencia';
 import Calendario from './dashboard/components/organisms/Calendario';
 import Login from './login/Login';
+import './App.css';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticación

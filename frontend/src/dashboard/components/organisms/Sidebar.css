@@ -1,38 +1,30 @@
-/* src/dashboard/components/organisms/Sidebar.css */
-
-
-.sidebar {
-  width: 220px; /* Ancho fijo para el sidebar */
-  background-color: #f0f0f0;
-  padding: 20px;
-  height: 100vh; /* Altura completa de la ventana */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border: 2px solid green; /* Borde temporal para diagnosticar */
-}
-
-.sidebar h2 {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
 .sidebar ul {
   list-style: none;
   padding: 0;
-  width: 100%;
 }
 
-.sidebar ul li {
-  padding: 10px 0;
-  cursor: pointer;
+.sidebar li {
+  margin-bottom: 10px;
 }
 
-.sidebar ul li a {
-  color: #333;
+.sidebar a {
   text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-  color: #007bff;
+.sidebar a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.sidebar a.selected {
+  background-color: #007bff; /* Fondo azul */
+  color: #ffd700; /* Texto amarillo */
+  font-weight: bold;
+  border: 2px solid #0056b3; /* Borde azul oscuro */
 }

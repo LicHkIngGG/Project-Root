@@ -1,26 +1,26 @@
-/* src/dashboard/components/templates/DashboardLayout.css */
-
+/* DashboardLayout.css */
 .dashboard-layout {
-  display: flex; /* Usamos flexbox para alinear el sidebar y el contenido */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  width: 100vw; /* Ocupa todo el ancho de la ventana */
-  overflow: hidden; /* Evita el desbordamiento */
+  display: flex; /* Flexbox para alinear Sidebar y contenido */
+  height: 100vh; /* Altura completa de la ventana */
+  width: 100%; /* Ancho completo */
+  overflow: hidden; /* Evita desbordamientos no deseados */
 }
 
 .sidebar {
-  width: 220px; /* Ancho fijo del sidebar */
-  background-color: #f0f0f0;
+  width: 220px; /* Ancho fijo del Sidebar */
+  height: 100%; /* Altura completa */
+  background-color: #f4f4f4; /* Fondo claro */
   padding: 20px;
-  height: 100vh; /* Altura completa */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  flex-shrink: 0; /* Evita que el Sidebar cambie de tamaño */
 }
 
 .content {
-  flex: 1; /* Toma el espacio restante */
-  padding: 40px;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: auto;
+  flex: 1; /* Ocupa el resto del espacio disponible */
+  padding: 20px;
+  overflow-y: auto; /* Permite scroll vertical si el contenido es largo */
+  background-color: #f9f9f9; /* Fondo claro para distinguir el contenido */
+  display: flex; /* Flexbox interno para organizar los hijos del contenido */
+  flex-direction: column; /* Organiza los hijos en columna */
+  align-items: center; /* Centra horizontalmente los hijos */
 }
