@@ -3,7 +3,7 @@ import './PanelEstadoPuerta.css';
 
 const PanelEstadoPuerta = () => {
   const [estadoChapa, setEstadoChapa] = useState('CERRADO'); // Estado de la chapa
-  const [botonEstado, setBotonEstado] = useState('CHAPA APAGADA'); // Texto dinámico del botón
+  const [botonEstado, setBotonEstado] = useState('CHAPA APAGADA'); // Texto dinámico del botón aeaeaea
   const [botonClase, setBotonClase] = useState('boton-apagado'); // Clase CSS dinámica del botón
 
   const handleButtonClick = async () => {
