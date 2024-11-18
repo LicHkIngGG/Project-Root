@@ -11,6 +11,10 @@ const Sidebar = () => (
         <li><Link to="/calendar">Calendar</Link></li>
         <li><Link to="/reports">Reports</Link></li>
         <li><Link to="/administracion">Administración</Link></li>
+        <li><Link to="/Reconocimiento">Reconocimiento</Link></li>
+        <li><Link to="/RegistroN">RegistroN</Link></li>
+        <li><Link to="/Entrenamiento">Entrenamiento</Link></li>
+
       </ul>
     </div>
   );

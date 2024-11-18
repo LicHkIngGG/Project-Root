@@ -6,6 +6,10 @@ from routes.logs_chapa import logs_chapa_bp
 from routes.asistencia import asistencia_bp
 from routes.notificaciones import notificaciones_bp
 
+# Importar los nuevos blueprints
+from routes.registro import registro_bp
+from routes.entrenamiento import entrenamiento_bp
+from routes.reconocimiento import reconocimiento_bp
 
 app = Flask(__name__)
 CORS(app, origins="*")
@@ -21,6 +25,18 @@ mysql.init_app(app)
 app.register_blueprint(logs_chapa_bp)
 app.register_blueprint(asistencia_bp)
 app.register_blueprint(notificaciones_bp)
+
+
+# Registrar Blueprints nuevos
+app.register_blueprint(registro_bp, url_prefix='/api/registro')  # Rutas para Registro
+app.register_blueprint(entrenamiento_bp, url_prefix='/api/entrenamiento')  # Rutas para Entrenamiento
+app.register_blueprint(reconocimiento_bp, url_prefix='/api/reconocimiento')  # Rutas para Reconocimiento Facial
+
+
+# Ruta principal
+@app.route('/')
+def index():
+    return "¡Servidor Flask con SocketIO funcionando correctamente!"
 
 if __name__ == '__main__':
     app.debug = True

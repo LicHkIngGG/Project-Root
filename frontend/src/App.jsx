@@ -5,6 +5,9 @@ import EstadosPuertaPage from './dashboard/components/pages/EstadosPuertaPage';
 import PanelRegistroAsistencia from './dashboard/components/organisms/PanelRegistroAsistencia';
 import Calendario from './dashboard/components/organisms/Calendario';
 import Login from './login/Login';
+import Reconocimiento from './dashboard/components/organisms/Reconocimiento';
+import RegistroN from './dashboard/components/organisms/RegistroN';
+import Entrenamiento from './dashboard/components/organisms/Entrenamiento';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticación
@@ -44,6 +47,10 @@ const App = () => {
                   <Route path="/calendar" element={<Calendario />} />
                   <Route path="/reports" element={<div>Reports</div>} />
                   <Route path="/administracion" element={<EstadosPuertaPage />} />
+                  <Route path="/RegistroN" element={<RegistroN />} />
+                  <Route path="/Reconocimiento" element={<Reconocimiento/>} />
+                  <Route path="/Entrenamiento" element={<Entrenamiento />} />
+                  
                 </Routes>
               </DashboardLayout>
             }
